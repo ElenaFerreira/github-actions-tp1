@@ -35,3 +35,6 @@ Error: Process completed with exit code 1.
 
 
 #### 36. Vérifie dans l'onglet "Releases" de ton repository. Que constates-tu ?
+J'ai ma release avec deux fichiers à télécharger
+code source
+un zip et un tar.gz
