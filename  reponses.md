@@ -15,3 +15,12 @@ FAILED test_model.py::test_predict_positive - AssertionError: assert 'positif' =
 #### 14. Que constates-tu après le push ?
 
 Statut success
+
+
+#### 27. Commit et pousse ces modifications. Vérifie l'onglet Actions et télécharge l'artifact généré. Que contient-il ?
+{
+  "accuracy": 0.884,
+  "precision": 0.915,
+  "recall": 0.929,
+  "f1_score": 0.974
+}
