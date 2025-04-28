@@ -8,7 +8,7 @@ def predict_sentiment(text):
     Returns:
         str: The predicted sentiment ('positive', 'negative', or 'neutral').
     """
-    # Check if the text is empty or None 
+    # Check if the text is empty or None
     if not text:
         return "neutral"
     
