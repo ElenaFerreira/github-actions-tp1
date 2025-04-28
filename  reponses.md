@@ -32,3 +32,6 @@ Model accuracy: 0.888
 Error: Process completed with exit code 1.
 
 -> Ce qu'on veut
+
+
+#### 36. Vérifie dans l'onglet "Releases" de ton repository. Que constates-tu ?
