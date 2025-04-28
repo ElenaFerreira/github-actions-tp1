@@ -24,3 +24,11 @@ Statut success
   "recall": 0.929,
   "f1_score": 0.974
 }
+
+#### 30. Pousse plusieurs fois les modifications et observe les résultats. Que constates-tu ?
+Run ACCURACY=$(python -c "import json; f=open('metrics.json');
+Model accuracy: 0.888
+❌ Model accuracy below threshold (0.9)
+Error: Process completed with exit code 1.
+
+-> Ce qu'on veut
