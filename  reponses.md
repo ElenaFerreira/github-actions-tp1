@@ -55,4 +55,4 @@ Predict the sentiment of a given text.
 - `str` - The predicted sentiment ('positive', 'negative', or 'neutral').
 
 
-
+#### 40. Ajoute une nouvelle dépendance à requirements.txt et pousse-la. Exécute ce workflow deux fois. Que constates-tu au niveau du temps d'exécution ?
