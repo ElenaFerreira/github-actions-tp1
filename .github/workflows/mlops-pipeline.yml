@@ -1,0 +1,66 @@
+name: MLOps Pipeline
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'model.py'
+      - 'metrics.py'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Run tests
+        run: |
+          pip install -r requirements.txt
+          pytest
+
+  evaluate:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Evaluate model
+        run: python metrics.py
+      - name: Upload metrics
+        uses: actions/upload-artifact@v3
+        with:
+          name: model-metrics
+          path: metrics.json
+
+  package:
+    needs: evaluate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker image
+        run: docker build . --file Dockerfile --tag model:latest
+      - name: Test Docker image
+        run: docker run model:latest
+
+  deploy-dev:
+    needs: package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to dev
+        run: echo "Deploying to development environment..."
+
+  deploy-prod:
+    needs: deploy-dev
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Deploy to production
+        run: |
+          echo "Waiting for manual approval..."
+          echo "Deploying to production environment..."
