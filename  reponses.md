@@ -38,3 +38,21 @@ Error: Process completed with exit code 1.
 J'ai ma release avec deux fichiers à télécharger
 code source
 un zip et un tar.gz
+
+
+#### 38. Ajoute plus de commentaires à ton fichier model.py et pousse-le. Vérifie l'artifact de documentation. Que contient-il ?
+<a id="model"></a>
+# model
+<a id="model.predict_sentiment"></a>
+#### predict\_sentiment
+```python
+def predict_sentiment(text)
+```
+Predict the sentiment of a given text.
+**Arguments**:
+- `text` _str_ - The input text to analyze.
+**Returns**:
+- `str` - The predicted sentiment ('positive', 'negative', or 'neutral').
+
+
+
