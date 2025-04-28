@@ -15,5 +15,3 @@ FAILED test_model.py::test_predict_positive - AssertionError: assert 'positif' =
 #### 14. Que constates-tu après le push ?
 
 Statut success
-
-Modification test
